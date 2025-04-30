@@ -34,3 +34,31 @@ class HashTable:
                 for j in range(len(self.data_map[i])):
                     all_keys.append(self.data_map[i][j][0])
         return all_keys
+    
+# ------------------------
+# TESTS
+# ------------------------
+
+print("Creating HashTable...")
+ht = HashTable()
+
+print("\nSetting items...")
+ht.set_item("apple", 100)
+ht.set_item("banana", 200)
+ht.set_item("grape", 300)
+ht.set_item("orange", 400)
+ht.set_item("apricot", 500)  # May cause a collision
+
+print("\nGetting items...")
+print("apple:", ht.get_item("apple"))     # Expected: 100
+print("banana:", ht.get_item("banana"))   # Expected: 200
+print("grape:", ht.get_item("grape"))     # Expected: 300
+print("orange:", ht.get_item("orange"))   # Expected: 400
+print("apricot:", ht.get_item("apricot")) # Expected: 500
+print("nonexistent:", ht.get_item("pear"))# Expected: None
+
+print("\nPrinting table...")
+ht.print_table()
+
+print("\nKeys in table:")
+print(ht.keys())  # Should print all inserted keys
